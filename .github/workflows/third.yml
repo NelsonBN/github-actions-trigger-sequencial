@@ -1,0 +1,17 @@
+name: "Sequence - third"
+
+on:
+  workflow_run:
+    workflows:
+      - "Sequence - second"
+    types:
+      - completed
+
+jobs:
+  sequence-third:
+    name: "Jobs - third"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Actions - third"
+        run: echo "Third sequence completed"

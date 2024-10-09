@@ -1,0 +1,18 @@
+name: "Sequence - second"
+
+on:
+  workflow_run:
+    workflows:
+      - "Sequence - one"
+    types:
+      - completed
+
+jobs:
+  sequence-second:
+    name: "Jobs - second"
+    runs-on: ubuntu-latest
+    if: ${{ success() }}
+
+    steps:
+      - name: "Actions - second"
+        run: echo "Second sequence completed"
