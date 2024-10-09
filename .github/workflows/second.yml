@@ -11,7 +11,7 @@ jobs:
   sequence-second:
     name: "Jobs - second"
     runs-on: ubuntu-latest
-    if: ${{ success() }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     steps:
       - name: "Actions - second"
